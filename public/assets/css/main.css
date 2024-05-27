@@ -1,0 +1,114 @@
+:root {
+    --main-bg-color: #660000;
+    --content-bg-color: #fff;
+    --btn-color: #fff;
+    --error-color: #dc3545;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--main-bg-color);
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-bg-color)
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: .875em;
+}
+
+.btn {
+    border-radius: 6px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+.btn-custom {
+    background: var(--main-bg-color);
+    color: var(--btn-color) !important;
+    line-height: 17px;
+    height: 33px;
+}
+
+.btn-outline-custom {
+    border: 1px solid var(--main-bg-color);
+    color: var(--main-bg-color);
+    line-height: 17px;
+    height: 33px;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-outline-custom:hover {
+    background: var(--main-bg-color) !important;
+    color: var(--btn-color) !important;
+}
+
+.authFormBox {
+    height: 100vh;
+    /* background: white; */
+    display: grid;
+    place-items: center;
+}
+
+.authFormBox form {
+    background: var(--content-bg-color);
+    border-radius: 7px;
+}
+
+.authFormBox form h5 {
+    text-align: center;
+    padding: 21px 0;
+    font-weight: bold;
+}
+
+.social_auth_btn .btn {
+    border-radius: 7px;
+    color: var(--btn-color);
+}
+
+.social_auth_btn_fb {
+    background-color: #3B5998;
+}
+
+.social_auth_btn_google {
+    background-color: #d62d20;
+}
+.alertWrapper div.alert{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 80%;
+    border-left: 4px solid red;
+    border-radius: 0;
+    margin: 0;
+    padding: 7px 7px;
+    background: whi
+}
+
+#contentWrapper {
+    margin: 7px;
+    padding: 14px;
+    background: var(--content-bg-color);
+    border-radius: 3px;
+}
