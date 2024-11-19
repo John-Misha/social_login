@@ -38,7 +38,7 @@
                 <span>Sign in using</span>
 
                 <div class="social_auth_btn mt-2">
-                    <a class="btn social_auth_btn_fb" href="#">
+                    <a class="btn social_auth_btn_fb" href="{{ route('auth-facebook') }}">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                     <a class="btn social_auth_btn_google" href="{{ route('auth-google') }}">
