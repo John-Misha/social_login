@@ -32,19 +32,19 @@ class GoogleController extends Controller
         } catch (Exception $e) {
             return redirect('/login')->with('error', 'Something went wrong. Please try again.');
         }
-        
+
         $user = User::where('email', $googleUser->email)->first();
-        
+
         if ($user) {;
             Auth::login($user);
         } else {
-            DB::transaction(function () use($googleUser) {
+            DB::transaction(function () use ($googleUser) {
                 $user = User::create([
                     'name' => $googleUser->name,
                     'email' => $googleUser->email,
                     'password' => Hash::make('123456')
                 ]);
-                
+
                 UserDetails::create([
                     'user_id' => $user->id,
                     'google_id' => $googleUser->id,
@@ -53,7 +53,6 @@ class GoogleController extends Controller
 
                 Auth::login($user);
             });
-
         }
 
         return redirect()->intended('dashboard');

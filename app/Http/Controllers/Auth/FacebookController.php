@@ -35,17 +35,17 @@ class FacebookController extends Controller
         }
 
         $user = User::where('email', $facebookUser->email)->first();
-        
+
         if ($user) {;
             Auth::login($user);
         } else {
-            DB::transaction(function () use($facebookUser) {
+            DB::transaction(function () use ($facebookUser) {
                 $user = User::create([
                     'name' => $facebookUser->name,
                     'email' => $facebookUser->email,
                     'password' => Hash::make('123456')
                 ]);
-                
+
                 UserDetails::create([
                     'user_id' => $user->id,
                     'facebook_id' => $facebookUser->id,
@@ -54,7 +54,6 @@ class FacebookController extends Controller
 
                 Auth::login($user);
             });
-
         }
 
         return redirect()->intended('dashboard');

@@ -49,7 +49,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-custom btn-block">Register</button>
             </div>
-            
+
             <div class="form-group mt-5 text-center">
                 <span>Sign up using</span>
 
